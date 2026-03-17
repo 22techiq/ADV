@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Secure Payment System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body{
+      font-family: Arial;
+      padding:20px;
+      max-width:500px;
+      margin:auto;
+    }
+
+    input, button{
+      width:100%;
+      padding:12px;
+      margin:8px 0;
+      font-size:16px;
+    }
+
+    button{
+      background:#0a7cff;
+      color:white;
+      border:none;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#065ecf;
+    }
+
+    .box{
+      border:1px solid #ddd;
+      padding:15px;
+      margin-top:15px;
+      border-radius:8px;
+    }
+
+    .success{color:green;}
+    .pending{color:orange;}
+    .error{color:red;}
+  </style>
+</head>
+
+<body>
+
+<h2>Make Payment</h2>
+
+<input type="email" id="email" placeholder="Enter Email" required>
+<input type="number" id="amount" placeholder="Enter Amount (KES)" required>
+
+<button onclick="createPayment()">Pay Now</button>
+
+<div class="box">
+  <p id="paymentLink"></p>
+</div>
+
+<hr>
+
+<h3>Check Payment Status</h3>
+
+<input type="text" id="order" placeholder="Enter Order ID">
+<button onclick="checkStatus()">Check Status</button>
+
+<div class="box">
+  <p id="statusResult"></p>
+</div>
+
+<script>
+
+/* ==============================
+   CONFIG
+============================== */
+const API_URL = "https://script.google.com/macros/s/AKfycbw3cWT0Mc_gqJiIgjdLQyuOYSCMVvBePsorWRpe3Ocu3suDiw_RWAvfu5bGwIAGycf0/exec";
+const API_KEY = "YOUR_API_KEY";
+
+
+/* ==============================
+   CREATE PAYMENT
+============================== */
+function createPayment(){
+
+  const email = document.getElementById("email").value.trim();
+  const amount = document.getElementById("amount").value;
+
+  if(!email || !email.includes("@")){
+    alert("Enter valid email");
+    return;
+  }
+
+  if(!amount || amount < 10){
+    alert("Minimum amount is 10 KES");
+    return;
+  }
+
+  fetch(API_URL + "?key=" + API_KEY, {
+    method: "POST",
+    body: JSON.stringify({
+      email: email,
+      amount: amount
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+
+    if(data.status === "success"){
+
+      /* Show payment link */
+      document.getElementById("paymentLink").innerHTML =
+        "Click to Pay:<br><a href='" + data.payment_link + "' target='_blank'>" +
+        data.payment_link + "</a>";
+
+      /* Save order */
+      localStorage.setItem("orderID", data.order);
+
+      document.getElementById("order").value = data.order;
+
+      /* Start auto checking */
+      startAutoCheck();
+
+    }else{
+      alert(data.message);
+    }
+
+  })
+  .catch(err => {
+    alert("Error creating payment");
+  });
+
+}
+
+
+/* ==============================
+   CHECK STATUS
+============================== */
+function checkStatus(){
+
+  const order = document.getElementById("order").value;
+
+  if(!order){
+    alert("Enter Order ID");
+    return;
+  }
+
+  fetch(API_URL + "?key=" + API_KEY + "&order=" + order)
+    .then(res => res.json())
+    .then(data => {
+
+      let msg = "";
+      let cls = "";
+
+      if(data.status === "PENDING"){
+        msg = "⏳ Payment Pending";
+        cls = "pending";
+      }
+      else if(data.status === "COMPLETE"){
+        msg = "✅ Payment Successful";
+        cls = "success";
+      }
+      else if(data.status === "EXPIRED"){
+        msg = "⚠️ Payment Expired";
+        cls = "error";
+      }
+      else{
+        msg = "❌ Order not found";
+        cls = "error";
+      }
+
+      const el = document.getElementById("statusResult");
+      el.innerText = msg;
+      el.className = cls;
+
+    })
+    .catch(err => {
+      document.getElementById("statusResult").innerText = "Error checking status";
+    });
+
+}
+
+
+/* ==============================
+   AUTO CHECK (EVERY 5 SECONDS)
+============================== */
+let interval;
+
+function startAutoCheck(){
+
+  if(interval) clearInterval(interval);
+
+  interval = setInterval(() => {
+
+    const order = document.getElementById("order").value;
+
+    if(order){
+      checkStatus();
+    }
+
+  }, 5000);
+}
+
+
+/* ==============================
+   LOAD SAVED ORDER
+============================== */
+window.onload = function(){
+
+  const saved = localStorage.getItem("orderID");
+
+  if(saved){
+    document.getElementById("order").value = saved;
+    startAutoCheck();
+  }
+
+};
+
+</script>
+
+</body>
+</html>
