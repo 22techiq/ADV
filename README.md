@@ -6,7 +6,7 @@ A secure web-based payment system that generates and emails unique IntaSend chec
 
 
 # 💳 Secure Email-Based Payment System  
-### *(IntaSend + Google Apps Script)*
+### *(IntaSend + Serverless backend)*
 
 ---
 
@@ -31,14 +31,14 @@ A modern, secure, and scalable payment system that allows users to:
 ### 🎨 Frontend
 - Clean UI for user input  
 - Sends payment requests  
-- Displays payment link  
+- Displays generated payment link  
 - Auto-checks payment status  
 
 ---
 
-### ⚙️ Backend (Google Apps Script)
+### ⚙️ Backend (
 - Generates secure payment links  
-- Stores transactions in Google Sheets  
+- Stores transactions in Sheets  
 - Sends payment emails  
 - Handles webhook updates  
 
@@ -51,7 +51,7 @@ A modern, secure, and scalable payment system that allows users to:
 ---
 
 ### 🗄️ Database
-- Google Sheets (`PAYMENTS`)  
+- Sheets (`PAYMENTS`)  
 - Lightweight and easy to manage  
 
 ---
@@ -72,7 +72,7 @@ A modern, secure, and scalable payment system that allows users to:
 
 ## 🔐 Configuration
 
-Set these in **Google Apps Script → Project Settings → Script Properties**
+Set these in ** → Project Settings → Script Properties**
 
 
 
@@ -83,7 +83,7 @@ Never expose these keys in your frontend.
 
 ## 🚀 Deployment Guide
 
-1. Open Google Apps Script  
+1. Open Script  
 2. Click **Deploy → New Deployment**  
 3. Select **Web App**  
 4. Configure:
@@ -143,7 +143,7 @@ User clicks link and pays via IntaSend
 ✔ Complete payment  
 ✔ Confirm:
 
-- Google Sheet updates  
+- Sheet updates  
 - UI shows success  
 
 ---
@@ -157,7 +157,7 @@ If stuck on **PENDING**:
 - ❌ Payment not completed  
 
 ✔ Fix by checking:
-- Apps Script logs  
+- Script logs  
 - IntaSend dashboard  
 
 ---
@@ -186,7 +186,7 @@ If stuck on **PENDING**:
 
 ## 🚀 Future Enhancements
 
-- 📲 M-Pesa STK Push  
+- 📲 Auto M-Pesa STK Push  
 - 📊 Admin Dashboard  
 - 📩 SMS Notifications  
 - 🧾 PDF Receipts  
@@ -211,20 +211,20 @@ A secure, lightweight, and scalable payment system that enables email-based paym
 
 ## 📞 Contact & Support
 
-<div align="center">
+<div align="left">
 
 ### 💼 Get in Touch
 
 <i class="fas fa-user"></i> **Your Name**  
 
 <i class="fas fa-envelope"></i>  
-<a href="mailto:your@email.com" target="_blank">your@email.com</a>  
+<a href="mailto:22techiq@gmail.com" target="_blank">22techiq@gmail.com</a>  
 
 <i class="fas fa-phone"></i>  
-<a href="tel:+254XXXXXXXXX" target="_blank">+254 XXX XXX XXX</a>  
+<a href="tel:+254751828300" target="_blank">+254 751828300</a>  
 
 <i class="fas fa-globe"></i>  
-<a href="https://yourwebsite.com" target="_blank">Visit Website</a>  
+<a href="https://a-finder.vercel.app" target="_blank">Visit Website</a>  
 
 </div>
 
