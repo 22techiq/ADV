@@ -73,3 +73,26 @@ A modern, secure, and scalable payment system that allows users to:
 ## 🔐 Configuration
 
 Set these in **Google Apps Script → Project Settings → Script Properties**
+
+
+
+⚠️ **Security Rule:**  
+Never expose these keys in your frontend.
+
+---
+
+## 🚀 Deployment Guide
+
+1. Open Google Apps Script  
+2. Click **Deploy → New Deployment**  
+3. Select **Web App**  
+4. Configure:
+   - Execute as: **Me**
+   - Access: **Anyone**
+5. Deploy and copy the URL  
+
+---
+
+## 🔗 Webhook Setup
+
+Configure webhook in IntaSend dashboard:
