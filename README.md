@@ -96,3 +96,143 @@ Never expose these keys in your frontend.
 ## 🔗 Webhook Setup
 
 Configure webhook in IntaSend dashboard:
+
+
+
+
+---
+
+## 🔄 How It Works
+
+### 1️⃣ User Action
+User enters email and amount → clicks **Pay Now**
+
+---
+
+### 2️⃣ Backend Processing
+- Generates Order ID  
+- Requests payment link  
+- Saves data  
+- Sends email  
+
+---
+
+### 3️⃣ Payment
+User clicks link and pays via IntaSend  
+
+---
+
+### 4️⃣ Webhook Update
+- IntaSend notifies backend  
+- Status updated → `COMPLETE`  
+
+---
+
+### 5️⃣ Frontend Status
+- Frontend polls backend  
+- Displays:
+  - ⏳ Pending  
+  - ✅ Success  
+
+---
+
+## 🧪 Testing
+
+✔ Enter email & amount  
+✔ Generate payment link  
+✔ Complete payment  
+✔ Confirm:
+
+- Google Sheet updates  
+- UI shows success  
+
+---
+
+## 🔍 Troubleshooting
+
+If stuck on **PENDING**:
+
+- ❌ Wrong webhook URL  
+- ❌ Deployment not public  
+- ❌ Payment not completed  
+
+✔ Fix by checking:
+- Apps Script logs  
+- IntaSend dashboard  
+
+---
+
+## 🔐 Security
+
+### ✅ Implemented
+- Backend-only secrets  
+- Input validation  
+- Secure API calls  
+
+### 🔒 Recommended
+- Webhook signature verification  
+- Rate limiting  
+- Domain restrictions  
+
+---
+
+## ⚠️ Limitations
+
+- Uses polling (not real-time push)  
+- No authentication system  
+- No admin dashboard  
+
+---
+
+## 🚀 Future Enhancements
+
+- 📲 M-Pesa STK Push  
+- 📊 Admin Dashboard  
+- 📩 SMS Notifications  
+- 🧾 PDF Receipts  
+- ⚡ Real-time updates  
+
+---
+
+## 🏷️ Description
+
+A secure, lightweight, and scalable payment system that enables email-based payment link generation and seamless transaction processing using IntaSend and Google Apps Script.
+
+---
+
+## 🎯 Status
+
+✅ Production Ready  
+✅ Secure  
+✅ Scalable  
+✅ Fully Functional  
+
+---
+
+## 📞 Contact & Support
+
+<div align="center">
+
+### 💼 Get in Touch
+
+<i class="fas fa-user"></i> **Your Name**  
+
+<i class="fas fa-envelope"></i>  
+<a href="mailto:your@email.com" target="_blank">your@email.com</a>  
+
+<i class="fas fa-phone"></i>  
+<a href="tel:+254XXXXXXXXX" target="_blank">+254 XXX XXX XXX</a>  
+
+<i class="fas fa-globe"></i>  
+<a href="https://yourwebsite.com" target="_blank">Visit Website</a>  
+
+</div>
+
+---
+
+## 🎨 Font Awesome Setup
+
+To display icons properly in HTML, include this in your `<head>`:
+
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
