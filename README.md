@@ -218,11 +218,7 @@ A secure, lightweight, and scalable payment system that enables email-based paym
 <i class="fas fa-user"></i> **McOwino**  
 
 <a href="mailto:22techiq@gmail.com" target="_blank">22techiq@gmail.com</a>  
-
-<
 <a href="tel:+254751828300" target="_blank">+254 751828300</a>  
-
-
 <a href="https://a-finder.vercel.app" target="_blank">Visit Website</a>  
 
 </div>
