@@ -215,8 +215,7 @@ A secure, lightweight, and scalable payment system that enables email-based paym
 
 ### 💼 Get in Touch
 
-<i class="fas fa-user"></i> **Your Name**  
-
+<i class="fas fa-user"></i> **McOwino**  
 <i class="fas fa-envelope"></i>  
 <a href="mailto:22techiq@gmail.com" target="_blank">22techiq@gmail.com</a>  
 
@@ -232,7 +231,4 @@ A secure, lightweight, and scalable payment system that enables email-based paym
 
 ## 🎨 Font Awesome Setup
 
-To display icons properly in HTML, include this in your `<head>`:
-
-```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+To display icons properly in HTML, include this in your 
