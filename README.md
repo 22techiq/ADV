@@ -216,19 +216,19 @@ A secure, lightweight, and scalable payment system that enables email-based paym
 ### 💼 Get in Touch
 
 <i class="fas fa-user"></i> **McOwino**  
-<i class="fas fa-envelope"></i>  
+
 <a href="mailto:22techiq@gmail.com" target="_blank">22techiq@gmail.com</a>  
 
-<i class="fas fa-phone"></i>  
+<
 <a href="tel:+254751828300" target="_blank">+254 751828300</a>  
 
-<i class="fas fa-globe"></i>  
+
 <a href="https://a-finder.vercel.app" target="_blank">Visit Website</a>  
 
 </div>
 
 ---
 
-## 🎨 Font Awesome Setup
+## 🎨 WEWE NDIYE KUSEMA !
 
-To display icons properly in HTML, include this in your 
+Wanna integrate a payment system on your website ? Get in touch and I'll handle the task for you.
