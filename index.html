@@ -167,7 +167,7 @@ async function checkStatus(){
     const data = await response.json();
 
     let msg="", cls="";
-    if(data.status === "PENDING") { msg="⏳ Payment Pending"; cls="pending"; }
+    if(data.status === "PENDING") { msg="⏳ Payment Pending Manual Verification"; cls="pending"; }
     else if(data.status === "COMPLETE") { msg="✅ Payment Successful"; cls="success"; stopAutoCheck(); }
     else if(data.status === "EXPIRED") { msg="⚠️ Payment Expired"; cls="error"; stopAutoCheck(); }
     else { msg="❌ Order not found"; cls="error"; }
